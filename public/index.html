@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <title>Underscore Template Tester</title>
+        <style rel="stylesheet" type="text/cs" href="//cdnjs.cloudflare.com/ajax/libs/normalize/3.0.0/normalize.min.css"></style>
+    </head>
+    <body>
+        <h1>Underscore Template Tester</h1>
+        <form action="/templatize" method="POST">
+            <p>This app takes in JSON data and a template and mashes them together using underscore.js</p>
+            <textarea name="json" rows="10" cols="30" placeholder="Enter JSON data">{
+"package":"underscore_test",
+"version": "2.9.12"
+}
+</textarea>
+            <br>
+            <textarea name="template" rows="10" cols="30" placeholder="Enter your template here">
+The name of the package is <%=package%> and its version is <%=version%>
+            </textarea>
+            <br>
+            <input type="submit" value="Convert!">
+        </form><br>
+        <p>Source code for this is available at https://github.com/backdoor-ctf/web100</p>
+    </body>
+</html>
