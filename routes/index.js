@@ -9,7 +9,13 @@ exports.index = function(req, res){
 };
 
 exports.templatize = function(req, res){
-  var data = JSON.parse(req.body.json);
+  try{
+    var data = JSON.parse(req.body.json);
+  }
+  catch(e){
+  	res.send("Incorrect JSON");
+  	return;
+  }
   var template = req.body.template;
   var result = _.template(template, data);
   res.send(result);
